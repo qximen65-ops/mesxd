@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工作資訊申請｜職涯工作資源中心</title>
+  <meta name="description" content="提供外勤、倉儲、配送、資料紀錄等工作資訊說明，協助求職者了解工作內容與申請流程。" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="工作資訊申請｜職涯工作資源中心" />
+  <meta property="og:description" content="了解工作內容、流程與條件，填寫資料後由專人協助說明。" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f3f6fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #10233f 0%, #1b4f8f 55%, #3a8dde 100%);
+      color: #fff;
+      padding: 34px 20px 70px;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto 54px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.18);
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .brand-logo span {
+      font-size: 22px;
+    }
+
+    .nav-button {
+      padding: 10px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.16;
+      margin-bottom: 22px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 590px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      padding: 14px 22px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #123458;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      color: #172033;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-card h2 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      color: #123458;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      background: #f4f8ff;
+      border: 1px solid #e2ecf8;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: #dfeeff;
+      display: grid;
+      place-items: center;
+      flex: 0 0 32px;
+    }
+
+    .section {
+      padding: 74px 20px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title span {
+      display: inline-block;
+      color: #2b74c7;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      color: #10233f;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #607089;
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 17px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 26px;
+      padding: 28px;
+      border: 1px solid #e5ebf3;
+      box-shadow: 0 16px 38px rgba(20, 47, 82, 0.08);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      color: #123458;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: #5f6f86;
+      font-size: 16px;
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .card li::before {
+      content: "✓";
+      color: #2b74c7;
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .process {
+      background: #ffffff;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      position: relative;
+      background: #f7faff;
+      border: 1px solid #e2ecf8;
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #123458;
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      color: #123458;
+      margin-bottom: 8px;
+    }
+
+    .application {
+      background: linear-gradient(180deg, #f3f6fb 0%, #ffffff 100%);
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .contact-panel {
+      background: #10233f;
+      color: #fff;
+      border-radius: 30px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+
+    .contact-panel h2 {
+      font-size: 34px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .contact-panel p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 24px;
+    }
+
+    .contact-box {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-box a,
+    .contact-box div {
+      display: block;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .form-card {
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 34px;
+      border: 1px solid #e5ebf3;
+      box-shadow: 0 20px 48px rgba(20, 47, 82, 0.1);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 800;
+      color: #24364f;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #d7e1ee;
+      border-radius: 16px;
+      padding: 14px 15px;
+      font-size: 16px;
+      outline: none;
+      transition: border 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+      background: #fbfdff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2b74c7;
+      box-shadow: 0 0 0 4px rgba(43, 116, 199, 0.12);
+    }
+
+    textarea {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 18px;
+      background: linear-gradient(135deg, #123458, #2b74c7);
+      color: #fff;
+      box-shadow: 0 16px 36px rgba(43, 116, 199, 0.25);
+    }
+
+    .notice {
+      margin-top: 18px;
+      background: #fff9ed;
+      border: 1px solid #f1d8aa;
+      color: #735221;
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 14px;
+    }
+
+    .footer {
+      background: #0b1728;
+      color: rgba(255, 255, 255, 0.74);
+      padding: 34px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .form-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 24px;
+      }
+
+      .nav {
+        margin-bottom: 36px;
+      }
+
+      .nav-button {
+        display: none;
+      }
+
+      .hero-card,
+      .form-card,
+      .contact-panel {
+        border-radius: 24px;
+        padding: 24px;
+      }
+
+      .grid-3,
+      .steps,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 54px 18px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">
+          <div class="brand-logo"><span>職</span></div>
+          <div>職涯工作資源中心</div>
+        </div>
+        <a class="nav-button" href="#apply">填寫工作資訊申請</a>
+      </nav>
+
+      <div class="hero-inner">
+        <section>
+          <div class="eyebrow">工作資訊｜流程說明｜專人協助</div>
+          <h1>了解適合的工作方向，讓應徵流程更清楚</h1>
+          <p>
+            提供外勤、配送、倉儲、資料紀錄與一般職務資訊說明。填寫基本資料後，將依照您提供的資訊協助整理可了解的工作內容、流程與條件。
+          </p>
+          <div class="hero-actions">
+            <a href="#apply" class="btn btn-primary">立即填寫資料</a>
+            <a href="#jobs" class="btn btn-secondary">查看工作類型</a>
+          </div>
+        </section>
+
+        <aside class="hero-card">
+          <h2>可了解的工作資訊</h2>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="icon">📍</div>
+              <div>
+                <strong>地區與時段說明</strong><br />依照不同地區與需求，協助了解工作安排與基本流程。
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon">🧾</div>
+              <div>
+                <strong>工作內容整理</strong><br />包含外勤、紀錄、配送、倉儲等一般工作項目說明。
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon">💬</div>
+              <div>
+                <strong>專人後續聯繫</strong><br />提交後將由專人依序確認資料，並提供進一步說明。
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="jobs" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span>WORK INFORMATION</span>
+          <h2>常見工作類型</h2>
+          <p>以下為一般職務資訊方向，實際內容會依地區、職務需求與個人條件安排說明。</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>外勤紀錄類</h3>
+            <p>適合需要到指定地點進行查看、紀錄、回報等流程型工作。</p>
+            <ul>
+              <li>設備巡查與現場紀錄</li>
+              <li>店面或據點狀況回報</li>
+              <li>路線、場地、看板資料確認</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>配送支援類</h3>
+            <p>以物品配送、文件遞送、路線協助等一般外勤支援工作為主。</p>
+            <ul>
+              <li>文件與物品遞送</li>
+              <li>指定路線配送協助</li>
+              <li>基本交付與回報流程</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>倉儲作業類</h3>
+            <p>包含整理、掃描、分類、出貨協助等一般倉儲流程作業。</p>
+            <ul>
+              <li>包裹分揀與出貨協助</li>
+              <li>商品整理與資料核對</li>
+              <li>現場作業流程說明</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <div class="section-title">
+          <span>APPLICATION PROCESS</span>
+          <h2>申請流程</h2>
+          <p>簡單填寫資料，後續將依照您提供的內容協助確認可說明的工作資訊。</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>填寫資料</h3>
+            <p>留下姓名、聯絡方式、可配合地區與工作方向。</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>資料確認</h3>
+            <p>專人依照內容進行初步整理與確認。</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>說明工作</h3>
+            <p>提供工作內容、流程、條件與注意事項說明。</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>後續安排</h3>
+            <p>確認意願後，再依照實際需求進行後續安排。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="section application">
+      <div class="container">
+        <div class="form-wrap">
+          <aside class="contact-panel">
+            <div>
+              <h2>填寫資料，了解更多工作資訊</h2>
+              <p>
+                表單僅作為工作資訊說明與後續聯繫用途。請確認資料正確，以便專人提供更完整的說明。
+              </p>
+            </div>
+            <div class="contact-box">
+              <a href="https://line.me/R/ti/p/YOUR_LINE_ID" target="_blank">LINE 諮詢：@YOUR_LINE_ID</a>
+              <div>服務時間：週一至週六 10:00–19:00</div>
+              <div>提醒：提交後請留意電話或訊息通知</div>
+            </div>
+          </aside>
+
+          <form class="form-card" action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+            <!-- 更換 YOUR_EMAIL@gmail.com 為你的收件信箱 -->
+            <input type="hidden" name="_subject" value="新的工作資訊申請" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">姓名</label>
+                <input id="name" name="姓名" type="text" placeholder="請輸入姓名" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">手機</label>
+                <input id="phone" name="手機" type="tel" placeholder="請輸入手機號碼" required />
+              </div>
+
+              <div class="field">
+                <label for="line">LINE ID</label>
+                <input id="line" name="LINE ID" type="text" placeholder="選填，方便後續通知" />
+              </div>
+
+              <div class="field">
+                <label for="area">可配合地區</label>
+                <input id="area" name="可配合地區" type="text" placeholder="例如：台北、新北、桃園" required />
+              </div>
+
+              <div class="field">
+                <label for="jobtype">想了解的工作類型</label>
+                <select id="jobtype" name="想了解的工作類型" required>
+                  <option value="">請選擇</option>
+                  <option value="外勤紀錄類">外勤紀錄類</option>
+                  <option value="配送支援類">配送支援類</option>
+                  <option value="倉儲作業類">倉儲作業類</option>
+                  <option value="其他工作資訊">其他工作資訊</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="time">方便聯繫時間</label>
+                <select id="time" name="方便聯繫時間" required>
+                  <option value="">請選擇</option>
+                  <option value="上午">上午</option>
+                  <option value="下午">下午</option>
+                  <option value="晚上">晚上</option>
+                  <option value="皆可">皆可</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">備註</label>
+                <textarea id="message" name="備註" placeholder="可簡單填寫想了解的內容、可配合時間或其他問題"></textarea>
+              </div>
+            </div>
+
+            <button class="btn submit-btn" type="submit">送出工作資訊申請</button>
+
+            <div class="notice">
+              安全提醒：本頁面僅提供一般工作資訊說明與聯繫用途，不會要求提供銀行密碼、驗證碼、預繳費用或購買任何金融商品。實際職務內容與條件，皆以後續正式說明為準。
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>職涯工作資源中心</strong><br />
+      本網站提供一般工作資訊整理與申請聯繫服務，資料僅作為後續說明用途。
+    </footer>
+  </main>
+</body>
+</html>
