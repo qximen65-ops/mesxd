@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>工作資訊申請｜職涯工作資源中心</title>
-  <meta name="description" content="提供外勤、倉儲、配送、資料紀錄等工作資訊說明，協助求職者了解工作內容與申請流程。" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="工作資訊申請｜職涯工作資源中心" />
-  <meta property="og:description" content="了解工作內容、流程與條件，填寫資料後由專人協助說明。" />
-  <meta property="og:type" content="website" />
+  <title>工作資訊站｜多元職缺資訊</title>
+  <meta name="description" content="整理多元工作資訊，包含外勤紀錄、配送支援、倉儲作業、客服協助、行政助理、門市支援、清潔服務與活動支援等方向。" />
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -39,10 +38,36 @@
       position: relative;
       background: linear-gradient(135deg, #10233f 0%, #1b4f8f 55%, #3a8dde 100%);
       color: #fff;
-      padding: 34px 20px 70px;
+      padding: 34px 20px 72px;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      top: -80px;
+      right: -70px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      bottom: 30px;
+      left: -60px;
     }
 
     .nav {
+      position: relative;
+      z-index: 1;
       max-width: 1120px;
       margin: 0 auto 54px;
       display: flex;
@@ -55,7 +80,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.5px;
     }
 
@@ -84,6 +109,8 @@
     }
 
     .hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1120px;
       margin: 0 auto;
       display: grid;
@@ -131,7 +158,7 @@
       align-items: center;
       border-radius: 16px;
       padding: 14px 22px;
-      font-weight: 800;
+      font-weight: 900;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
       border: none;
@@ -210,8 +237,9 @@
     .section-title span {
       display: inline-block;
       color: #2b74c7;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 8px;
+      letter-spacing: 0.5px;
     }
 
     .section-title h2 {
@@ -222,7 +250,7 @@
 
     .section-title p {
       color: #607089;
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       font-size: 17px;
     }
@@ -239,6 +267,12 @@
       padding: 28px;
       border: 1px solid #e5ebf3;
       box-shadow: 0 16px 38px rgba(20, 47, 82, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 48px rgba(20, 47, 82, 0.12);
     }
 
     .card h3 {
@@ -278,7 +312,6 @@
     }
 
     .step {
-      position: relative;
       background: #f7faff;
       border: 1px solid #e2ecf8;
       border-radius: 24px;
@@ -302,177 +335,151 @@
       margin-bottom: 8px;
     }
 
-    .application {
+    .step p {
+      color: #607089;
+    }
+
+    .consult-section {
       background: linear-gradient(180deg, #f3f6fb 0%, #ffffff 100%);
     }
 
-    .form-wrap {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-
-    .contact-panel {
-      background: #10233f;
-      color: #fff;
-      border-radius: 30px;
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100%;
-    }
-
-    .contact-panel h2 {
-      font-size: 34px;
-      line-height: 1.25;
-      margin-bottom: 18px;
-    }
-
-    .contact-panel p {
-      color: rgba(255, 255, 255, 0.82);
-      margin-bottom: 24px;
-    }
-
-    .contact-box {
-      display: grid;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .contact-box a,
-    .contact-box div {
-      display: block;
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .form-card {
-      background: #ffffff;
-      border-radius: 30px;
-      padding: 34px;
-      border: 1px solid #e5ebf3;
-      box-shadow: 0 20px 48px rgba(20, 47, 82, 0.1);
-    }
-
-    .contact-clean {
-      max-width: 860px;
+    .consult-card {
+      position: relative;
+      overflow: hidden;
+      max-width: 960px;
       margin: 0 auto;
-    }
-
-    .contact-clean-card {
-      background: #ffffff;
+      background: #0f2747;
+      color: #ffffff;
       border-radius: 34px;
-      padding: 42px;
-      border: 1px solid #e5ebf3;
-      box-shadow: 0 22px 60px rgba(20, 47, 82, 0.12);
+      padding: 46px;
+      box-shadow: 0 28px 70px rgba(15, 39, 71, 0.22);
     }
 
-    .contact-badge {
+    .consult-card::before {
+      content: "";
+      position: absolute;
+      inset: -160px -100px auto auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(36, 211, 111, 0.18);
+      filter: blur(6px);
+    }
+
+    .consult-card::after {
+      content: "";
+      position: absolute;
+      left: -90px;
+      bottom: -110px;
+      width: 250px;
+      height: 250px;
+      border-radius: 999px;
+      background: rgba(48, 160, 255, 0.16);
+    }
+
+    .consult-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .consult-badge {
       display: inline-block;
       padding: 8px 15px;
       border-radius: 999px;
-      background: #eef6ff;
-      color: #2b74c7;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       font-weight: 900;
       margin-bottom: 18px;
       font-size: 14px;
     }
 
-    .contact-clean-card h2 {
-      color: #123458;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.25;
-      margin-bottom: 16px;
+    .consult-card h2 {
+      font-size: clamp(30px, 4.5vw, 46px);
+      line-height: 1.22;
+      margin-bottom: 18px;
     }
 
-    .contact-clean-card p {
-      color: #607089;
+    .consult-card p {
+      color: rgba(255, 255, 255, 0.84);
       font-size: 17px;
-      margin-bottom: 24px;
+      max-width: 760px;
+      margin-bottom: 26px;
     }
 
-    .contact-points {
-      display: grid;
-      gap: 14px;
-      margin: 26px 0;
-    }
-
-    .contact-points div {
-      padding: 18px;
-      border-radius: 20px;
-      background: #f7faff;
-      border: 1px solid #e2ecf8;
-    }
-
-    .contact-points strong {
-      display: block;
-      color: #123458;
-      margin-bottom: 4px;
-      font-size: 17px;
-    }
-
-    .contact-points span {
-      color: #607089;
-      font-size: 15px;
-    }
-
-    .form-grid {
+    .consult-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
+      margin: 28px 0;
     }
 
-    .field {
+    .consult-item {
+      display: flex;
+      gap: 12px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .consult-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.14);
       display: grid;
-      gap: 8px;
+      place-items: center;
+      flex: 0 0 36px;
     }
 
-    .field.full {
-      grid-column: 1 / -1;
+    .consult-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #ffffff;
     }
 
-    label {
-      font-weight: 800;
-      color: #24364f;
-      font-size: 14px;
+    .consult-item span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
     }
 
-    input,
-    select,
-    textarea {
+    .line-flow-btn {
+      position: relative;
+      isolation: isolate;
       width: 100%;
-      border: 1px solid #d7e1ee;
-      border-radius: 16px;
-      padding: 14px 15px;
-      font-size: 16px;
-      outline: none;
-      transition: border 0.2s ease, box-shadow 0.2s ease;
-      font-family: inherit;
-      background: #fbfdff;
+      min-height: 58px;
+      overflow: hidden;
+      background: linear-gradient(90deg, #06c755, #19e67a, #06c755, #00a83f);
+      background-size: 300% 100%;
+      color: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 18px 38px rgba(6, 199, 85, 0.28);
+      animation: greenFlow 3s linear infinite;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #2b74c7;
-      box-shadow: 0 0 0 4px rgba(43, 116, 199, 0.12);
+    .line-flow-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+      transform: skewX(-20deg);
+      animation: shineMove 2.4s ease-in-out infinite;
+      z-index: -1;
     }
 
-    textarea {
-      min-height: 112px;
-      resize: vertical;
+    @keyframes greenFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
     }
 
-    .submit-btn {
-      width: 100%;
-      margin-top: 18px;
-      background: linear-gradient(135deg, #123458, #2b74c7);
-      color: #fff;
-      box-shadow: 0 16px 36px rgba(43, 116, 199, 0.25);
+    @keyframes shineMove {
+      0% { left: -80%; }
+      55% { left: 130%; }
+      100% { left: 130%; }
     }
 
     .notice {
@@ -498,13 +505,13 @@
     }
 
     @media (max-width: 900px) {
-      .hero-inner,
-      .form-wrap {
+      .hero-inner {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .steps {
+      .steps,
+      .consult-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -523,15 +530,14 @@
       }
 
       .hero-card,
-      .form-card,
-      .contact-panel {
+      .consult-card {
         border-radius: 24px;
         padding: 24px;
       }
 
       .grid-3,
       .steps,
-      .form-grid {
+      .consult-grid {
         grid-template-columns: 1fr;
       }
 
@@ -545,27 +551,28 @@
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <header class="hero">
       <nav class="nav">
         <div class="brand">
           <div class="brand-logo"><span>職</span></div>
-          <div>職涯工作資源中心</div>
+          <div>工作資訊站</div>
         </div>
-        <a class="nav-button" href="#jobs">查看工作分類</a>
+        <a class="nav-button" href="#consult">LINE 諮詢</a>
       </nav>
 
       <div class="hero-inner">
         <section>
-          <div class="eyebrow">工作資訊｜流程說明｜專人協助</div>
-          <h1>了解適合的工作方向，讓應徵流程更清楚</h1>
+          <div class="eyebrow">工作資訊｜流程說明｜多元職缺</div>
+          <h1>了解多元工作方向，找到更清楚的選擇</h1>
           <p>
-            提供外勤、配送、倉儲、資料紀錄與一般職務資訊說明。可直接透過或  了解相關資訊，依照您提供的地區與方向協助整理可了解的工作內容、流程與條件。
+            整理外勤、配送、倉儲、客服、行政、門市、清潔、資料紀錄與活動支援等工作資訊，協助先了解內容、流程與基本方向。
           </p>
           <div class="hero-actions">
             <a href="#jobs" class="btn btn-primary">查看工作分類</a>
-            <a href="#jobs" class="btn btn-secondary">查看工作類型</a>
+            <a href="#consult" class="btn btn-secondary">LINE 諮詢</a>
           </div>
         </section>
 
@@ -581,13 +588,13 @@
             <div class="info-item">
               <div class="icon">🧾</div>
               <div>
-                <strong>工作內容整理</strong><br />包含外勤、紀錄、配送、倉儲等一般工作項目說明。
+                <strong>工作內容整理</strong><br />包含外勤、紀錄、配送、倉儲、客服與行政等一般工作項目說明。
               </div>
             </div>
             <div class="info-item">
               <div class="icon">💬</div>
               <div>
-                <strong>後續說明</strong><br />可透過  或詢問，依照需求提供進一步說明。
+                <strong>LINE 諮詢說明</strong><br />可先透過 LINE 詢問工作方向、可配合地區與想了解的內容。
               </div>
             </div>
           </div>
@@ -600,7 +607,7 @@
         <div class="section-title">
           <span>WORK INFORMATION</span>
           <h2>多元工作資訊分類</h2>
-          <p>整理不同類型的一般工作資訊，包含外勤、倉儲、配送、客服、行政、資料紀錄、清潔服務與門市支援等方向，方便先了解工作內容與流程。</p>
+          <p>整理不同類型的一般工作資訊，方便先了解工作內容、流程與基本方向。</p>
         </div>
 
         <div class="grid-3">
@@ -700,39 +707,93 @@
     <section class="section process">
       <div class="container">
         <div class="section-title">
-          <span>APPLICATION PROCESS</span>
+          <span>PROCESS</span>
           <h2>了解流程</h2>
-          <p>不用填寫表單，可直接透過或  詢問，後續依照您提供的方向協助說明工作資訊。</p>
+          <p>可先透過 LINE 詢問工作方向，後續依照地區與需求協助說明工作資訊。</p>
         </div>
 
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>諮詢</h3>
-            <p>留下想了解的工作方向、地區與方便聯繫時間。</p>
+            <h3>選擇方向</h3>
+            <p>先查看想了解的工作類型，例如外勤、配送、倉儲、客服或行政。</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <h3>方向確認</h3>
-            <p>依照地區與工作類型，整理可說明的資訊方向。</p>
+            <h3>提供地區</h3>
+            <p>簡單告知可配合區域，方便確認可說明的工作方向。</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <h3>內容說明</h3>
-            <p>提供工作內容、流程、條件與注意事項說明。</p>
+            <h3>了解內容</h3>
+            <p>確認工作內容、流程、地點、條件與注意事項。</p>
           </div>
           <div class="step">
             <div class="step-number">4</div>
-            <h3>後續聯繫</h3>
+            <h3>後續說明</h3>
             <p>確認想了解的內容後，再依實際需求進行後續說明。</p>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="consult" class="section consult-section">
+      <div class="container">
+        <div class="consult-card">
+          <div class="consult-content">
+            <div class="consult-badge">LINE CONSULT</div>
+            <h2>想了解工作資訊，可先透過 LINE 諮詢</h2>
+            <p>
+              不需要先提供敏感資料。可簡單告知想了解的工作方向、可配合地區與方便聯繫時間，後續會依照資訊提供說明。
+            </p>
+
+            <div class="consult-grid">
+              <div class="consult-item">
+                <div class="consult-icon">📍</div>
+                <div>
+                  <strong>可配合地區</strong>
+                  <span>例如台北、新北、桃園、台中、高雄或其他可配合區域。</span>
+                </div>
+              </div>
+
+              <div class="consult-item">
+                <div class="consult-icon">🧭</div>
+                <div>
+                  <strong>想了解的工作方向</strong>
+                  <span>例如外勤、配送、倉儲、客服、行政、門市、清潔或資料紀錄。</span>
+                </div>
+              </div>
+
+              <div class="consult-item">
+                <div class="consult-icon">⏰</div>
+                <div>
+                  <strong>方便聯繫時間</strong>
+                  <span>可簡單告知上午、下午、晚上或其他方便回覆的時間。</span>
+                </div>
+              </div>
+
+              <div class="consult-item">
+                <div class="consult-icon">💬</div>
+                <div>
+                  <strong>想了解的問題</strong>
+                  <span>可詢問工作內容、流程、地點、條件與後續說明方式。</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://line.me/R/ti/p/YOUR_LINE_ID" target="_blank" class="btn line-flow-btn">立即透過 LINE 諮詢</a>
+
+            <div class="notice">
+              安全提醒：本頁面僅提供一般工作資訊整理與聯繫用途，不會要求提供銀行密碼、驗證碼、預繳費用或購買任何金融商品。實際職務內容與條件，皆以後續正式說明為準。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
-      <strong>職涯工作資源中心</strong><br />
-      本網站提供一般工作資訊整理與申請聯繫服務，資料僅作為後續說明用途。
+      <strong>工作資訊站</strong><br />
+      本網站提供一般工作資訊整理與說明用途，實際職務內容與條件以後續正式說明為準。
     </footer>
   </main>
 </body>
