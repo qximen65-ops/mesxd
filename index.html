@@ -358,6 +358,68 @@
       box-shadow: 0 20px 48px rgba(20, 47, 82, 0.1);
     }
 
+    .contact-clean {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .contact-clean-card {
+      background: #ffffff;
+      border-radius: 34px;
+      padding: 42px;
+      border: 1px solid #e5ebf3;
+      box-shadow: 0 22px 60px rgba(20, 47, 82, 0.12);
+    }
+
+    .contact-badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: #2b74c7;
+      font-weight: 900;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .contact-clean-card h2 {
+      color: #123458;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .contact-clean-card p {
+      color: #607089;
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 14px;
+      margin: 26px 0;
+    }
+
+    .contact-points div {
+      padding: 18px;
+      border-radius: 20px;
+      background: #f7faff;
+      border: 1px solid #e2ecf8;
+    }
+
+    .contact-points strong {
+      display: block;
+      color: #123458;
+      margin-bottom: 4px;
+      font-size: 17px;
+    }
+
+    .contact-points span {
+      color: #607089;
+      font-size: 15px;
+    }
+
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -491,7 +553,7 @@
           <div class="brand-logo"><span>職</span></div>
           <div>職涯工作資源中心</div>
         </div>
-        <a class="nav-button" href="#apply">私訊了解工作資訊</a>
+        <a class="nav-button" href="#jobs">查看工作分類</a>
       </nav>
 
       <div class="hero-inner">
@@ -499,10 +561,10 @@
           <div class="eyebrow">工作資訊｜流程說明｜專人協助</div>
           <h1>了解適合的工作方向，讓應徵流程更清楚</h1>
           <p>
-            提供外勤、配送、倉儲、資料紀錄與一般職務資訊說明。可直接透過私訊或 LINE 了解相關資訊，依照您提供的地區與方向協助整理可了解的工作內容、流程與條件。
+            提供外勤、配送、倉儲、資料紀錄與一般職務資訊說明。可直接透過或  了解相關資訊，依照您提供的地區與方向協助整理可了解的工作內容、流程與條件。
           </p>
           <div class="hero-actions">
-            <a href="#apply" class="btn btn-primary">立即私訊諮詢</a>
+            <a href="#jobs" class="btn btn-primary">查看工作分類</a>
             <a href="#jobs" class="btn btn-secondary">查看工作類型</a>
           </div>
         </section>
@@ -525,7 +587,7 @@
             <div class="info-item">
               <div class="icon">💬</div>
               <div>
-                <strong>私訊後續說明</strong><br />可透過 LINE 或私訊詢問，依照需求提供進一步說明。
+                <strong>後續說明</strong><br />可透過  或詢問，依照需求提供進一步說明。
               </div>
             </div>
           </div>
@@ -640,13 +702,13 @@
         <div class="section-title">
           <span>APPLICATION PROCESS</span>
           <h2>了解流程</h2>
-          <p>不用填寫表單，可直接透過私訊或 LINE 詢問，後續依照您提供的方向協助說明工作資訊。</p>
+          <p>不用填寫表單，可直接透過或  詢問，後續依照您提供的方向協助說明工作資訊。</p>
         </div>
 
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>私訊諮詢</h3>
+            <h3>諮詢</h3>
             <p>留下想了解的工作方向、地區與方便聯繫時間。</p>
           </div>
           <div class="step">
@@ -663,64 +725,6 @@
             <div class="step-number">4</div>
             <h3>後續聯繫</h3>
             <p>確認想了解的內容後，再依實際需求進行後續說明。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="apply" class="section application">
-      <div class="container">
-        <div class="form-wrap">
-          <aside class="contact-panel">
-            <div>
-              <h2>想了解工作資訊，可先透過私訊諮詢</h2>
-              <p>
-                本頁不需要填寫表單。可直接透過 LINE 或私訊留下想了解的工作方向、可配合地區與方便聯繫時間，後續會依照資訊提供說明。
-              </p>
-            </div>
-            <div class="contact-box">
-              <a href="https://line.me/R/ti/p/YOUR_LINE_ID" target="_blank">LINE 諮詢：@YOUR_LINE_ID</a>
-              <div>建議訊息：我想了解工作資訊，地區是＿＿，想了解＿＿類型。</div>
-              <div>服務時間：週一至週六 10:00–19:00</div>
-            </div>
-          </aside>
-
-          <div class="form-card">
-            <h2 style="color:#123458; font-size:30px; margin-bottom:16px;">諮詢時可提供的資訊</h2>
-            <p style="color:#607089; margin-bottom:22px;">為了讓說明更清楚，私訊時可簡單提供以下內容，不需要提供敏感資料。</p>
-
-            <div class="info-list">
-              <div class="info-item">
-                <div class="icon">📍</div>
-                <div>
-                  <strong>可配合地區</strong><br />例如：台北、新北、桃園、台中、高雄，或其他可配合區域。
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="icon">🧭</div>
-                <div>
-                  <strong>想了解的工作方向</strong><br />例如：外勤紀錄、配送支援、倉儲作業、客服協助、行政助理、清潔服務等。
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="icon">⏰</div>
-                <div>
-                  <strong>方便聯繫時間</strong><br />可簡單告知上午、下午、晚上或其他方便回覆的時間。
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="icon">💬</div>
-                <div>
-                  <strong>想了解的問題</strong><br />可詢問工作內容、流程、地點、條件與後續說明方式。
-                </div>
-              </div>
-            </div>
-
-            <a href="https://line.me/R/ti/p/YOUR_LINE_ID" target="_blank" class="btn submit-btn">直接透過 LINE 諮詢</a>
-
-            <div class="notice">
-              安全提醒：本頁面僅提供一般工作資訊整理與聯繫用途，不會要求提供銀行密碼、驗證碼、預繳費用或購買任何金融商品。實際職務內容與條件，皆以後續正式說明為準。
-            </div>
           </div>
         </div>
       </div>
